@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SleepAPPActivity!</string>
+    <string name="app_name">SleepAPP</string>
+    <string name="btn_previouTopic">上一题</string>
+    <string name="btn_nextTopic">下一题</string>
+    <string name="info_isLastTopic">已经是最后一条了</string>
+    <string name="info_isFirstTopic">已经是最后一条了</string>
+    <string name="topic1">1、近1个月，晚上上床睡觉通常是＿＿＿ 点钟。（24小时制，下同）</string>
+    <string name="topic2">2、近1个月，从上床到入睡通常需要＿＿＿ 分钟。</string>
+    <string name="topic3">3、近1个月，通常早上＿＿＿ 点起床。</string>
+    <string name="topic4">4、近1个月，每夜通常实际睡眠＿＿＿ 小时（不等于卧床时间）。</string>
+    <string name="topic5">5、近1个月，因下列情况影响睡眠而烦恼：</string>
+    <string name="topic5_a">a)入睡困难（30分钟不能入睡）</string>
+    <string name="topic5_b">b)夜间易醒或早醒</string>
+    <string name="topic5_c">c)夜间去厕所</string>
+    <string name="topic5_d">d)呼吸不畅</string>
+    <string name="topic5_e">e)咳嗽或鼾声高</string>
+    <string name="topic5_f">f)感觉冷</string>
+    <string name="topic5_g">g)感觉热</string>
+    <string name="topic5_h">h)做恶梦</string>
+    <string name="topic5_i">i)疼痛不适</string>
+    <string name="topic5_j">j)其它影响睡眠的事情</string>
+    <string name="topic6">6、近1 个月，总的来说，您认为自己的睡眠质量</string>
+    <string name="topic7">7、近1个月，您用药物催眠的情况</string>
+    <string name="topic8">8、近1个月，您常感到困倦吗？</string>
+    <string name="topic9">9、近1个月，您做事情的精力不足吗？</string>
+</resources>

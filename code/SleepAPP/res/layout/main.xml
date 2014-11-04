@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+<TextView
+    android:id="@+id/txtDes"
+    android:layout_width="fill_parent"
+    android:layout_height="90.0dip"
+    android:layout_marginLeft="20.0dip"
+    android:layout_marginRight="20.0dip"
+    android:layout_marginTop="10.0dip"
+    android:background="@drawable/style"
+    android:text="Descript"
+    android:textSize="20.0px" />
+
+<ListView
+    android:id="@+id/lists"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20.0dip"
+    android:layout_weight="1.0"
+    android:cacheColorHint="#00000000" />
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15.0dip"
+    android:gravity="center_horizontal" >
+
+    <Button
+        android:id="@+id/btnUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_weight="1.0"
+        android:text="@string/btn_previouTopic"
+        android:onClick="onClickPreviouTopic" 
+        />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15.0dip"
+        android:layout_weight="1.0"
+        android:text="@string/btn_nextTopic" 
+        android:onClick="onClickNextTopic"
+        />
+</LinearLayout>
+
+<RelativeLayout
+    android:id="@+id/adLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+
+</LinearLayout>
