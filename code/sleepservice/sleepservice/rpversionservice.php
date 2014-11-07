@@ -1,0 +1,21 @@
+<?php
+header('Content-type:text/json');
+require_once("./rpversionbiz.class.php");
+$rpVersionInfos=RpVersionBiz::getNewVersion();
+$jsonStr="[{";
+if(!empty($rpVersionInfos))
+{
+	foreach ($rpVersionInfos as $rpVersionInfo) {
+					$rpversion=$rpVersionInfo->VERSION;
+					$rpversion_name=$rpVersionInfo->VERSION_NAME;
+					$rpversion_url=$rpVersionInfo->VERSION_URL;
+					$rpversion_desc=$rpVersionInfo->VERSION_DESC;
+					$jsonStr.="\"version\":\"".$rpversion."\",";
+			    $jsonStr.="\"version_name\":\"".$rpversion_name."\",";
+			    $jsonStr.="\"version_url\":\"".$rpversion_url."\",";
+			    $jsonStr.="\"version_desc\":\"".$rpversion_desc."\"";
+			}
+}
+$jsonStr.="}]";
+echo($jsonStr);
+?>

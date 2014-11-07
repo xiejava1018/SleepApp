@@ -3,15 +3,16 @@ package com.doit8.sleep;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.doit8.sleep.pojo.SelectedItem;
 import com.doit8.sleep.pojo.Subject;
 import com.doit8.sleep.pojo.SubjectFactory;
 import com.doit8.sleep.service.Score;
+import com.doit8.util.version.UpdateManager;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,11 +28,17 @@ public class SleepAPPActivity extends Activity {
 	Subject curSubject;//当前的题目
 	ArrayAdapter adapter;
 	List answerItems;
+	Map selectItemMap;//选择项结果
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	final Context context=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        //判断是否最新版本
+		UpdateManager updManager=new UpdateManager(this);
+		updManager.checkUpdate();
+		
+		
         topicDescTV=(TextView)findViewById(R.id.txtDes);
         answerListView = (ListView) findViewById(R.id.lists);
         curSubject=SubjectFactory.createSubjects(this);
@@ -39,9 +46,9 @@ public class SleepAPPActivity extends Activity {
         String[] answer=curSubject.getAnswers();
         answerItems=new ArrayList();
         answerItems.addAll(Arrays.asList(answer));
-        adapter=new  ArrayAdapter(this,android.R.layout.simple_list_item_1,answerItems);
+        adapter=new  ArrayAdapter(this,android.R.layout.simple_list_item_single_choice,answerItems);
         answerListView.setAdapter(adapter);
-        
+        answerListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         
         // 增加ListViewItem的点击事件
         answerListView.setOnItemClickListener(new OnItemClickListener() {
@@ -62,6 +69,7 @@ public class SleepAPPActivity extends Activity {
 					String[] answer=curSubject.getAnswers();
 					answerItems.clear();
 					answerItems.addAll(Arrays.asList(answer));
+					answerListView.setItemChecked(arg2, false);
 					adapter.notifyDataSetChanged();// 通知listView刷新数据
 				}
 				else
@@ -82,6 +90,13 @@ public class SleepAPPActivity extends Activity {
 			answerItems.clear();
 			answerItems.addAll(Arrays.asList(answer));
 			adapter.notifyDataSetChanged();// 通知listView刷新数据
+			//显示已选择的结果
+			selectItemMap=Score.getSelectItemMap();
+			if(selectItemMap.containsKey(curSubject.getTopicId()))
+			{
+				SelectedItem selectedItem=(SelectedItem)selectItemMap.get(curSubject.getTopicId());
+				answerListView.setItemChecked(selectedItem.getSelectted(), true);
+			}
 		}
 		else
 		{
@@ -98,6 +113,13 @@ public class SleepAPPActivity extends Activity {
 			answerItems.clear();
 			answerItems.addAll(Arrays.asList(answer));
 			adapter.notifyDataSetChanged();// 通知listView刷新数据
+			//显示已选择的结果
+			selectItemMap=Score.getSelectItemMap();
+			if(selectItemMap.containsKey(curSubject.getTopicId()))
+			{
+				SelectedItem selectedItem=(SelectedItem)selectItemMap.get(curSubject.getTopicId());
+				answerListView.setItemChecked(selectedItem.getSelectted(), true);
+			}
 		}
 		else
 		{

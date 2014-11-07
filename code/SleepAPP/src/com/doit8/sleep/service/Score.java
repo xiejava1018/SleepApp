@@ -9,6 +9,13 @@ import com.doit8.sleep.pojo.SelectedItem;
 
 public class Score {
 	public static Map<String, Integer> scoreMap=new HashMap<String, Integer>();
+	public static Map<String, SelectedItem> selectItemMap=new HashMap<String, SelectedItem>();
+	
+
+	public static Map<String, SelectedItem> getSelectItemMap() {
+		return selectItemMap;
+	}
+
 	public static boolean isSelectTopic(String topicId)
 	{
 		List<String> selectTopics=new ArrayList<String>();
@@ -65,6 +72,7 @@ public class Score {
 		}
 		selectedItem.setScore(score);
 		scoreMap.put(topicId, score);
+		selectItemMap.put(topicId, selectedItem);
 		return score;
 	}
 	
@@ -206,4 +214,5 @@ public class Score {
 		}
 		return getSleetpTime;
 	}
+
 }

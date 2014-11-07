@@ -29,9 +29,11 @@ public final class R {
         public static final int btnUp=0x7f060002;
         public static final int lists=0x7f060001;
         public static final int txtDes=0x7f060000;
+        public static final int update_progress=0x7f060005;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int softupdate_progress=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
@@ -40,6 +42,13 @@ public final class R {
         public static final int hello=0x7f050000;
         public static final int info_isFirstTopic=0x7f050005;
         public static final int info_isLastTopic=0x7f050004;
+        public static final int soft_update_cancel=0x7f05001f;
+        public static final int soft_update_info=0x7f05001b;
+        public static final int soft_update_later=0x7f05001d;
+        public static final int soft_update_no=0x7f050019;
+        public static final int soft_update_title=0x7f05001a;
+        public static final int soft_update_updatebtn=0x7f05001c;
+        public static final int soft_updating=0x7f05001e;
         public static final int topic1=0x7f050006;
         public static final int topic2=0x7f050007;
         public static final int topic3=0x7f050008;
