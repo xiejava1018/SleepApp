@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
 import com.doit8.sleep.pojo.SelectedItem;
 import com.doit8.sleep.pojo.Subject;
 import com.doit8.sleep.pojo.SubjectFactory;
@@ -13,6 +12,7 @@ import com.doit8.util.version.UpdateManager;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -75,7 +75,13 @@ public class SleepAPPActivity extends Activity {
 				else
 				{
 					int allScore=Score.getAllScore();
-					Toast.makeText(context, "您的匹兹堡睡眠质量指数分为："+allScore+"，≥8分为存在睡眠障碍，最高分为21分，得分越高，睡眠障碍情况越严重！", Toast.LENGTH_SHORT).show();
+					
+					Intent intent = new Intent(SleepAPPActivity.this,
+							ResultActivity.class);
+					intent.putExtra("allScore", allScore);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					//Toast.makeText(context, "您的匹兹堡睡眠质量指数分为："+allScore+"，≥8分为存在睡眠障碍，最高分为21分，得分越高，睡眠障碍情况越严重！", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

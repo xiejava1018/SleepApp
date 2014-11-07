@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@+id/llResult1" android:background="@drawable/resultxml" android:layout_width="400.0px" android:layout_height="280.0px" android:layout_marginTop="70.0px">
+        <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/tvResult1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0px" android:text="显示结果" />
+        <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:id="@+id/tvResult3" android:padding="10.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" />
+    </LinearLayout>
+    <Button android:id="@+id/btnBack" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="50.0px" android:text="再来一次" />
+    <RelativeLayout android:id="@id/adLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>
