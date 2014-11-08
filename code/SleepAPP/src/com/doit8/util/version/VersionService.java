@@ -37,7 +37,7 @@ public class VersionService {
 			}
 		}catch(Exception ex)
 		{
-			Log.e(TAG, "registUser error:"+ex.getMessage());
+			Log.e(TAG, "getNewVersion error:"+ex.getMessage());
 		}
 		return null;
 	}

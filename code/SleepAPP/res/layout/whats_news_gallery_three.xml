@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/whats_new_bg_03" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title_tv"
+            style="@style/whats_new_title"
+            android:text="@string/whats_new_title3" />
+
+        <ImageView
+            android:id="@+id/img_iv"
+            style="@style/whats_new_img"
+            android:src="@drawable/whats_new_img3" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="50.0dip" >
+
+            <LinearLayout
+                android:layout_width="90.0dip"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+          
+            </LinearLayout>
+
+         
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

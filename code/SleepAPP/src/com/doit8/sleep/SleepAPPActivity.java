@@ -8,6 +8,7 @@ import com.doit8.sleep.pojo.SelectedItem;
 import com.doit8.sleep.pojo.Subject;
 import com.doit8.sleep.pojo.SubjectFactory;
 import com.doit8.sleep.service.Score;
+import com.doit8.util.Location;
 import com.doit8.util.version.UpdateManager;
 
 import android.app.Activity;
@@ -38,6 +39,9 @@ public class SleepAPPActivity extends Activity {
 		UpdateManager updManager=new UpdateManager(this);
 		updManager.checkUpdate();
 		
+	    //获取当前城市
+		Location  location=new Location(this);
+		location.getCity();
 		
         topicDescTV=(TextView)findViewById(R.id.txtDes);
         answerListView = (ListView) findViewById(R.id.lists);

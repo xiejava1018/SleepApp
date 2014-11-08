@@ -34,5 +34,9 @@
     <string name="soft_update_later">稍后更新</string>
     <string name="soft_updating">正在更新</string>
     <string name="soft_update_cancel">取消</string>
+    
+    <string name="whats_new_msg1">"如你所知，微信不只是一个聊天工具"</string>
+    <string name="whats_new_title2">"一切从照片开始你拍了一张照片"</string>
+    <string name="whats_new_title3">你就拥有了自己的相册</string>
    
 </resources>
