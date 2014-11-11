@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity{
 	private static final String TAG = "MainActivity";
@@ -23,6 +22,7 @@ public class MainActivity extends Activity{
 	private ImageView mPage0;
 	private ImageView mPage1;
 	private ImageView mPage2;
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		//去掉标题栏全屏显示
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -63,6 +63,7 @@ public class MainActivity extends Activity{
 	}
    public class MyOnPageChangeListener implements OnPageChangeListener {
     	
+		@Override
 		public void onPageSelected(int page) {
 			
 			//翻页时当前page,改变当前状态园点图片

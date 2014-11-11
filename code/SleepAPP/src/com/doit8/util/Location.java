@@ -21,7 +21,6 @@ import android.location.Criteria;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.provider.Settings;
 import android.widget.Toast;
 
@@ -57,13 +56,14 @@ public class Location {
 		// 查找到服务信息
 		Criteria criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_FINE); // 高精度
-		criteria.setAltitudeRequired(false);
-		criteria.setBearingRequired(false);
-		criteria.setCostAllowed(true);
+		criteria.setAltitudeRequired(false);//不要求海拔  
+		criteria.setBearingRequired(false);//不要求方位  
+		criteria.setCostAllowed(true);//允许有话费  
 		criteria.setPowerRequirement(Criteria.POWER_LOW); // 低功耗
 
 		String provider = locationManager.getBestProvider(criteria, true); // 获取GPS信息
-		location = locationManager.getLastKnownLocation(provider); // 通过GPS获取位置
+		//location = locationManager.getLastKnownLocation(provider); // 通过GPS获取位置 LocationManager.GPS_PROVIDER
+		location = locationManager.getLastKnownLocation(provider);
 	    if(location!=null)
 	    {
 	    	city=getAddress(location.getLongitude(),location.getLatitude());

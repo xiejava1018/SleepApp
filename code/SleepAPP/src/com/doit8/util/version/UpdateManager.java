@@ -52,7 +52,8 @@ public class UpdateManager
 
     private Handler mHandler = new Handler()
     {
-        public void handleMessage(Message msg)
+        @Override
+		public void handleMessage(Message msg)
         {
             switch (msg.what)
             {
